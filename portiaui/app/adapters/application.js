@@ -3,8 +3,8 @@ import DS from "ember-data";
 import UrlTemplates from "ember-data-url-templates";
 const { inject: { service } } = Ember;
 
-const DELETED_EXTENSION = 'https://portia.scrapinghub.com/jsonapi/extensions/deleted';
-const UPDATES_EXTENSION = 'https://portia.scrapinghub.com/jsonapi/extensions/updates';
+const DELETED_EXTENSION = '';
+const UPDATES_EXTENSION = '';
 
 function filter_update_errors(errors, pointer) {
     return errors.filter(data =>

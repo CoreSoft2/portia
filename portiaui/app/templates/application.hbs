@@ -12,9 +12,8 @@
     </nav>
 
     <section>
-        {{notification-container}}
-        {{outlet 'side-bar'}}
         {{#sliding-main}}
+            {{notification-container}}
             {{outlet 'options-panels'}}
             {{outlet 'main'}}
             {{outlet 'tool-panels'}}
