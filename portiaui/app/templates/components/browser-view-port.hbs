@@ -9,7 +9,7 @@
         Connecting ...
     {{else if webSocket.closed}}
         {{#if webSocket.secondsUntilReconnect }}
-            Reconnecting to Portia server in {{webSocket.secondsUntilReconnect}} seconds.
+            Reconnecting to the server in {{webSocket.secondsUntilReconnect}} seconds.
         {{else if websocket.reconnectMessage}}
             {{websocket.reconnectMessage}}
         {{/if}}
@@ -28,8 +28,8 @@
 </div>
 
 <div class="browser-start-page {{if browser.url 'hide'}}">
-    <img src="/assets/images/portia-logo.svg" alt="Portia logo">
-    <h3>What would you like to scrape?</h3>
+    <img src="/assets/images/logo.svg" alt="logo">
+    <h3>What would you like define?</h3>
     {{url-bar class="navbar-form" role="navigation" autofocus=true}}
     {{#if uiState.models.project.spiders.length}}
         <p>

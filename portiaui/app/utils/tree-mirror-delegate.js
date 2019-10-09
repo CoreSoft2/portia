@@ -42,7 +42,7 @@ function addEmbedBlockedMessage(node) {
         'width': width,
         'height': height,
         'lineHeight': height,
-    }).text("Portia doesn't support browser plugins.");
+    }).text("App doesn't support browser plugins.");
     node.style.display = "none";
     node.parentNode.insertBefore(errorMsg[0], node);
 }

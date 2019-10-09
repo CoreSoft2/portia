@@ -140,7 +140,7 @@ const BrowserIFrame = Ember.Component.extend({
         if (failures && ((new Date() - new Date(failures.dt))/(1000*3600) < 1)) {
             let failed = failures.failed;
             if (failed > 3 && window.navigator.onLine) {
-                // Tell user that page is not working with Portia
+                // Tell user that page is not working
                 this.set('webSocket.reconnectComponent', 'browser-url-blocked');
                 this.set('loading', false);
                 throw new Error(`URL Blocked: ${url} in ${this.get('uiState.project.id')}`,
