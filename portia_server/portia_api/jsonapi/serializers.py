@@ -28,12 +28,6 @@ __all__ = [
     'JsonApiPolymorphicSerializer',
 ]
 
-DELETED_PROFILE = 'https://portia.scrapinghub.com/jsonapi/extensions/deleted'
-UPDATES_PROFILE = 'https://portia.scrapinghub.com/jsonapi/extensions/updates'
-DELETED_PROFILE_ALIAS = 'deleted'
-UPDATES_PROFILE_ALIAS = 'updates'
-
-
 class JsonApiSerializerMeta(SchemaMeta):
     """Meta class for JSON API schemas."""
     def __new__(mcs, name, bases, attrs):
@@ -503,16 +497,6 @@ class JsonApiSerializer(with_metaclass(JsonApiSerializerMeta, BaseSchema)):
 
         if 'included' in response:
             response['included'].sort(key=itemgetter('type', 'id'))
-
-        deleted = self.format_profile_references(deleted)
-        if deleted:
-            self.add_profile_to_response(DELETED_PROFILE, DELETED_PROFILE_ALIAS,
-                                         deleted, response)
-
-        updated = self.format_profile_references(updated)
-        if updated:
-            self.add_profile_to_response(UPDATES_PROFILE, UPDATES_PROFILE_ALIAS,
-                                         updated, response)
 
         if (isinstance(self.instance, Model) and
                 self.instance.data_key in deleted_set):
