@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 WORKDIR /app/slyd
 
 ENV PATH="/opt/qt59/5.9.1/gcc_64/bin:${PATH}"

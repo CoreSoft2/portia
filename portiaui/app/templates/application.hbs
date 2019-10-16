@@ -12,9 +12,9 @@
     </nav>
 
     <section>
-        <div style="display:none;">{{outlet 'side-bar'}}</div>
+        {{outlet 'side-bar'}}
+        {{notification-container}}
         {{#sliding-main}}
-            {{notification-container}}
             {{outlet 'options-panels'}}
             {{outlet 'main'}}
             {{outlet 'tool-panels'}}
